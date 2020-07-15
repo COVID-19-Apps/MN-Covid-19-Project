@@ -85,12 +85,12 @@ public class CoronaActivity extends AppCompatActivity {
 
     private void parseJSON(String url1) {
 
-        JsonObjectRequest request1 = new JsonObjectRequest(Request.Method.GET,url1, null,
+        JsonObjectRequest request1 = new JsonObjectRequest(url1, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONObject jsonObject = response.getJSONObject("Odisha").getJSONObject("districtData");
+                            JSONObject jsonObject = response.getJSONObject("Manipur").getJSONObject("districtData");
                             Log.i("jsonresponse","hi");
                             Iterator iterator = jsonObject.keys();
                             while (iterator.hasNext()) {

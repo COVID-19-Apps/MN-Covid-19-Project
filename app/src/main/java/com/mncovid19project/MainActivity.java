@@ -70,12 +70,8 @@ public class MainActivity extends AppCompatActivity {
             "Support Orphans & Vulnerable",
             "E-Pass",
             "Donate Funds",
-            "Application Tracker",
-            "Migrant People",
             "Online Education",
             "Government Orders",
-            "Tweets",
-            "Videos",
             "FAQs"
 
     } ;
@@ -94,12 +90,8 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.support,
             R.drawable.pass,
             R.drawable.donate,
-            R.drawable.tracker,
-            R.drawable.migrant,
             R.drawable.education,
             R.drawable.governmentorder,
-            R.drawable.tweet,
-            R.drawable.video,
             R.drawable.faq
 
     };
@@ -229,14 +221,14 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONObject jsonObject = response.getJSONObject("OR").getJSONObject("total");
+                            JSONObject jsonObject = response.getJSONObject("MN").getJSONObject("total");
                             String confirmed = jsonObject.getString("confirmed");
-                            String deceased = jsonObject.getString("deceased");
+                            //String deceased = jsonObject.getString("deceased");
                             String tested = jsonObject.getString("tested");
                             String recovered = jsonObject.getString("recovered");
 
                             Confirmed.setText(confirmed);
-                            Deceased.setText(deceased);
+                            Deceased.setText("0");
                             Tested.setText(tested);
                             Recovered.setText(recovered);
 
